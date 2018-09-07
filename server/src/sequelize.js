@@ -1,13 +1,14 @@
 import Sequelize from 'sequelize';
 import UserModel from './models/user';
+import { config } from '../configServer';
 
 // Connection to MYSQL
 const sequelize = new Sequelize(
-  'bookstore',
-  'root',
-  '',
+  config.db_name,
+  config.db_user,
+  config.db_pass,
   {
-    host: 'localhost',
+    host: config.db_host,
     dialect: 'mysql',
   }
 );
@@ -20,7 +21,5 @@ sequelize.authenticate().then(() => {
 })
 
 const User = UserModel(sequelize, Sequelize);
-
-
 
 export default User ;
