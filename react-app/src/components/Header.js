@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import * as actions from '../actions/auth';
 import './Header.css';
@@ -29,9 +29,11 @@ const Header = ({ isAuth, logout }) => (
       {
         isAuth ?
         <Nav pullRight>
-          <NavItem onClick={() => logout()}>
-            Logout
-          </NavItem>
+          <NavDropdown eventKey={1} title="[user-name]" id="basic-nav-dropdown">
+            <MenuItem componentClass={Link} eventKey={1.1} to="/profile" href="/profile">Profile</MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey={1.2} onClick={() => logout()}>Logout</MenuItem>
+          </NavDropdown>
         </Nav>
         :
         <Nav pullRight>

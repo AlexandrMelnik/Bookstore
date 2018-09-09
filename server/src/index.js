@@ -8,7 +8,6 @@ app.use(bodyParser.json());
 
 app.use('/api/auth', auth);
 
-
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
