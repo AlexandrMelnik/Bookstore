@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import User from '../sequelize';
 import md5 from 'md5';
 
-
 dotenv.config();
 const router = express.Router();
 

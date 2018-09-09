@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import User from '../sequelize';
+import { sendConfirmEmail } from '../mailer';
 import md5 from 'md5';
 
 dotenv.config();
@@ -23,7 +24,7 @@ router.post('/', (req, res) => {
        };
        User.create(data).then((newUser, created) =>  {
          res.json({ user: { email: newUser.email, token: newUser.token } });
-         console.log(newUser.email);
+         sendConfirmEmail({email: newUser.email, username: newUser.username, generateUrl: `http://localhost:3000/confirm/${genereteToken}`});
        });
      }
    })

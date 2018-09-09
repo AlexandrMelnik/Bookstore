@@ -7,7 +7,7 @@ const ConfirmAccount = ({ isConfirm, isAuth }) => (
   <div className="profile">
     {isAuth && !isConfirm &&
       <Alert bsStyle="warning">
-        Please check your email account and confirm the account
+        <p>Please check your email account and confirm the account</p>
       </Alert>
     }
   </div>
