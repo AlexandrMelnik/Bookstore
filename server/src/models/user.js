@@ -3,8 +3,7 @@ const UserModel = (sequelize, type) => {
     email: type.STRING,
     password: type.STRING,
     token: type.STRING,
-    username: type.STRING,
-    ban: type.INTEGER
+    username: type.STRING
   },{timestamps: false})
 }
 

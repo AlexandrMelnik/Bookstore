@@ -3,9 +3,10 @@ import Validator from 'validator';
 import PropTypes from 'prop-types';
 import { Form, FormGroup, ControlLabel, FormControl, HelpBlock, Button, Alert  } from 'react-bootstrap';
 
-class LoginForm extends Component {
+class SignupForm extends Component {
   state = {
     data: {
+      username: '',
       email: '',
       password: ''
     },
@@ -31,6 +32,7 @@ class LoginForm extends Component {
 
   validate = data => {
     const errors = {};
+    if(!data.username) errors.username = "Enter your name";
     if(!Validator.isEmail(data.email)) errors.email = "Enter your e-mail address, exapmle@example.com";
     if(!data.password) errors.password = "Enter your account password";
     return errors;
@@ -38,8 +40,20 @@ class LoginForm extends Component {
 
   render() {
     const { data, errors, loading } = this.state;
+
     return (
       <Form onSubmit={this.onSubmit}>
+        <FormGroup validationState={errors.username && 'error'}>
+          <ControlLabel>Your name</ControlLabel>
+            <FormControl
+              type="text"
+              name="username"
+              placeholder="Your name"
+              value={data.username}
+              onChange={this.onChange}
+            />
+          {errors.username && <HelpBlock>{errors.username}</HelpBlock>}
+        </FormGroup>
         <FormGroup validationState={errors.email && 'error'}>
           <ControlLabel>Email address</ControlLabel>
             <FormControl
@@ -56,7 +70,7 @@ class LoginForm extends Component {
             <FormControl
               type="password"
               name="password"
-              placeholder="Enter your password"
+              placeholder="Password"
               value={data.password}
               onChange={this.onChange}
             />
@@ -64,14 +78,14 @@ class LoginForm extends Component {
         </FormGroup>
         {errors.global && <Alert bsStyle="danger">{errors.global}</Alert>}
         <hr />
-        <Button type="submit" bsStyle="primary" block disabled={!!loading}>Signin</Button>
+        <Button type="submit" bsStyle="primary" block disabled={!!loading}>Signup</Button>
       </Form>
     );
   }
 }
 
-LoginForm.propTypes = {
+SignupForm.propTypes = {
   submit: PropTypes.func.isRequired
 }
 
-export default LoginForm;
+export default SignupForm;
