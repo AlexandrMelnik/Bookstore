@@ -7,6 +7,7 @@ import GuestRoute from './components/routes/GuestRoute';
 
 // Components
 import Header from './components/Header';
+import ConfirmAccount from './components/other/ConfirmAccount';
 
 // Pages
 import HomePage from './components/pages/Home';
@@ -19,6 +20,7 @@ const App = ({ location }) => (
   <div className="bookstore_app">
     <Header />
     <Grid>
+      <ConfirmAccount />
       <Route location={location} exact path="/" component={HomePage} />
       <Route location={location} path="/contacts" component={ContactsPage} />
       <GuestRoute location={location} path="/signin" component={SigninPage} />
