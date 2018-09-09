@@ -1,8 +1,9 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import User from '../sequelize';
-import { config } from '../../configServer';
 import md5 from 'md5';
 
+dotenv.config();
 const router = express.Router();
 
 router.post('/', (req, res) => {
@@ -12,15 +13,14 @@ router.post('/', (req, res) => {
      if(user) {
        res.status(400).json({ errors: { global: "That email is already taken" } });
      } else {
-       const genereteToken = md5(password+email+config.secretHash);
-       const generetePassword = md5(password+config.secretHash);
+       const genereteToken = md5(password+email+process.env.SECRET_KEY);
+       const generetePassword = md5(password+process.env.SECRET_KEY);
        const data = {
          username: username,
          email: email,
          password: generetePassword,
          token: genereteToken
        };
-
        User.create(data).then((newUser, created) =>  {
          res.json({ user: { email: newUser.email, token: newUser.token } });
          console.log(newUser.email);

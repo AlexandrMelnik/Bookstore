@@ -1,14 +1,16 @@
 import Sequelize from 'sequelize';
 import UserModel from './models/user';
-import { config } from '../configServer';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Connection to MYSQL
 const sequelize = new Sequelize(
-  config.db_name,
-  config.db_user,
-  config.db_pass,
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASS,
   {
-    host: config.db_host,
+    host: process.env.DB_HOST,
     dialect: 'mysql',
   }
 );
@@ -22,4 +24,4 @@ sequelize.authenticate().then(() => {
 
 const User = UserModel(sequelize, Sequelize);
 
-export default User ;
+export default User;
