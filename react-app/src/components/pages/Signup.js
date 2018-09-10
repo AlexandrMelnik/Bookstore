@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Col } from 'react-bootstrap';
-import { signup } from '../../actions/users';
 import SignupForm from '../forms/Signup';
+import { signup } from '../../actions/users';
 
 class SignupPage extends Component {
-  submit = data => {
-    return this.props.signup(data).then(() => this.props.history.push("/"));
-  }
-
+  submit = data =>
+    this.props.signup(data).then(() => this.props.history.push("/"));
+  
   render() {
     return (
       <Col md={4} mdOffset={4}>
-        <h3>Signup page</h3>
+        <h3>
+          Signup page
+        </h3>
         <hr />
         <SignupForm submit={this.submit} />
       </Col>

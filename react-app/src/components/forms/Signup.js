@@ -40,7 +40,6 @@ class SignupForm extends Component {
 
   render() {
     const { data, errors, loading } = this.state;
-
     return (
       <Form onSubmit={this.onSubmit}>
         <FormGroup validationState={errors.username && 'error'}>

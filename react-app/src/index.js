@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import decode from 'jwt-decode';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -13,7 +14,12 @@ import registerServiceWorker from './registerServiceWorker';
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 if(localStorage.userToken) {
-  const user = { token: localStorage.userToken }
+  const payload = decode(localStorage.userToken);
+  const user = {
+    token: localStorage.userToken,
+    email: payload.email,
+    confirm: payload.confirm
+  }
   store.dispatch(userLoggedIn(user));
 }
 

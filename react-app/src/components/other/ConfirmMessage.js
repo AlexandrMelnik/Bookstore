@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Alert } from 'react-bootstrap';
 
-const ConfirmAccount = ({ isConfirm, isAuth }) => (
+const ConfirmMessage = ({ isConfirm, isAuth }) => (
   <div className="profile">
     {isAuth && !isConfirm &&
       <Alert bsStyle="warning">
@@ -13,7 +13,7 @@ const ConfirmAccount = ({ isConfirm, isAuth }) => (
   </div>
 );
 
-ConfirmAccount.propTypes = {
+ConfirmMessage.propTypes = {
   isConfirm: PropTypes.bool.isRequired,
   isAuth: PropTypes.bool.isRequired
 }
@@ -25,4 +25,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(ConfirmAccount);
+export default connect(mapStateToProps)(ConfirmMessage);

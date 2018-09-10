@@ -7,12 +7,13 @@ import GuestRoute from './components/routes/GuestRoute';
 
 // Components
 import Header from './components/Header';
-import ConfirmAccount from './components/other/ConfirmAccount';
+import ConfirmMessage from './components/other/ConfirmMessage';
 
 // Pages
 import HomePage from './components/pages/Home';
 import SigninPage from './components/pages/Signin';
 import SignupPage from './components/pages/Signup';
+import ConfirmPage from './components/pages/Confirm';
 import ProfilePage from './components/pages/Profile';
 import ContactsPage from './components/pages/Contacts';
 
@@ -20,9 +21,10 @@ const App = ({ location }) => (
   <div className="bookstore_app">
     <Header />
     <Grid>
-      <ConfirmAccount />
+      <ConfirmMessage />
       <Route location={location} exact path="/" component={HomePage} />
       <Route location={location} path="/contacts" component={ContactsPage} />
+      <Route location={location} path="/confirm/:token" component={ConfirmPage} />
       <GuestRoute location={location} path="/signin" component={SigninPage} />
       <GuestRoute location={location} path="/signup" component={SignupPage} />
       <UserRoute location={location} path="/profile" component={ProfilePage} />

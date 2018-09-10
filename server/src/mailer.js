@@ -3,16 +3,14 @@ import nodemailer from 'nodemailer';
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: 'chanelsponky@gmail.com',
-    pass: 'activisiongym19977'
+    user: 'your@gmail.com',
+    pass: '1234'
   }
 });
 
-const from = 'Bookstore <info@bookstore.com>';
-
 export function sendConfirmEmail(user) {
   const email = {
-    from,
+    from: "Bookstore",
     to: user.email,
     subject: "Bookstore - confirmation account",
     text: `
@@ -20,6 +18,5 @@ export function sendConfirmEmail(user) {
       ${user.generateUrl}
     `
   }
-
   transporter.sendMail(email);
 }
