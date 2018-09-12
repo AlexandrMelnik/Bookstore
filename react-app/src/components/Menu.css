@@ -1,0 +1,9 @@
+.menu{
+  background: none;
+  border: transparent;
+  border-radius: 4px;
+}
+
+.menu:hover{
+  background: #ececec;
+}

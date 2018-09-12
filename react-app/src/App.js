@@ -7,7 +7,7 @@ import GuestRoute from './components/routes/GuestRoute';
 
 // Components
 import Header from './components/Header';
-import ConfirmMessage from './components/other/ConfirmMessage';
+import ConfirmMessage from './components/messages/ConfirmMessage';
 
 // Pages
 import HomePage from './components/pages/Home';
