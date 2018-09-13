@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import User from '../sequelize';
+import { User } from '../sequelize';
 import { jwtModel }  from '../models/jwtModel';
 import md5 from 'md5';
 

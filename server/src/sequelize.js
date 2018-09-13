@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize';
 import UserModel from './models/user';
+import BooksModel from './models/books';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -22,6 +23,5 @@ sequelize.authenticate().then(() => {
   console.error('ERROR', 'Connect to mysql failed');
 })
 
-const User = UserModel(sequelize, Sequelize);
-
-export default User;
+export const User = UserModel(sequelize, Sequelize);
+export const Books = BooksModel(sequelize, Sequelize);
