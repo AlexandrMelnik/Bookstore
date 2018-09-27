@@ -1,8 +1,8 @@
-import { GET_ALL_BOOKS } from '../types';
+import { FETCH_BOOKS } from '../types';
 import api from '../api';
 
 export const getAllBooks = books => ({
-  type: GET_ALL_BOOKS,
+  type: FETCH_BOOKS,
   books
 });
 

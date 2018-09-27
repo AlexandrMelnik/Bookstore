@@ -1,10 +1,10 @@
-import { FETCH_BOOKS } from '../types';
+import { FETCH_CATEGORIES } from '../types';
 
 export default function user(state = [], action = []) {
   switch(action.type) {
-    case FETCH_BOOKS:
+    case FETCH_CATEGORIES:
       return [
-        ...action.books
+        ...action.categories
       ];
 
     default:

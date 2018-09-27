@@ -5,24 +5,24 @@ import { Carousel } from 'react-bootstrap';
 const Carousels = () => (
   <Carousel>
     <Carousel.Item>
-      <img width={900} height={500} alt="900x500" src="/test.png" />
+      <img width={900} height={500} alt="900x500" src="/slider-01.jpg" />
       <Carousel.Caption>
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Start Reading</h3>
+        <p>Reading is the best for get idea</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img width={900} height={500} alt="900x500" src="/test.png" />
+      <img width={900} height={500} alt="900x500" src="/slider-02.jpg" />
       <Carousel.Caption>
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Lets Writing</h3>
+        <p>NWriting to improve your imagination</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img width={900} height={500} alt="900x500" src="/test.png" />
+      <img width={900} height={500} alt="900x500" src="/slider-03.jpg" />
       <Carousel.Caption>
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Keep Reading</h3>
+        <p>Reading is the best for get idea</p>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>

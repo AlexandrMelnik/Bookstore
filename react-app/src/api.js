@@ -12,5 +12,9 @@ export default {
   books: {
     getBooks: () =>
       axios.get('/api/books/get_all').then(res => res.data.books)
+  },
+  categories: {
+    getCategories: () =>
+      axios.get('/api/categories/get_categories').then(res => res.data.categories)
   }
 }

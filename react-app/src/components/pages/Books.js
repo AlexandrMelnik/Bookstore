@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'react-bootstrap';
 import BookList from '../books/BookList';
-import Carousels from '../Carousel';
 import Categories from '../books/Categories';
 
 class HomePage extends Component {
@@ -13,9 +12,8 @@ class HomePage extends Component {
           <Categories />
         </Col>
         <Col xs={12} md={9}>
-          <Carousels />
-          <h3>Popular</h3>
-          <hr />
+          <h3>All</h3>
+          <hr/>
           <BookList />
         </Col>
       </Row>

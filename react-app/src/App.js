@@ -16,6 +16,7 @@ import SignupPage from './components/pages/Signup';
 import ConfirmPage from './components/pages/Confirm';
 import ProfilePage from './components/pages/Profile';
 import ContactsPage from './components/pages/Contacts';
+import BooksPage from './components/pages/Books';
 
 const App = ({ location }) => (
   <div className="bookstore_app">
@@ -25,6 +26,7 @@ const App = ({ location }) => (
       <Route location={location} exact path="/" component={HomePage} />
       <Route location={location} path="/contacts" component={ContactsPage} />
       <Route location={location} path="/confirm/:token" component={ConfirmPage} />
+      <Route location={location} path="/categories/:id" component={BooksPage} />
       <GuestRoute location={location} path="/signin" component={SigninPage} />
       <GuestRoute location={location} path="/signup" component={SignupPage} />
       <UserRoute location={location} path="/profile" component={ProfilePage} />
